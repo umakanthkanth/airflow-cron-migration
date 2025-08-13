@@ -19,5 +19,7 @@ with DAG(
 
     task = BashOperator(
         task_id='run_hello_job',
-        bash_command='python3 /path/to/scripts/hello_job.py'
+        bash_command='python3 ../scripts/hello_job.py'
     )
+
+
