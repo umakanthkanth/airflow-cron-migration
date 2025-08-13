@@ -1,6 +1,6 @@
 import os
 from pathlib import Path
-CRON_FILE = "main/scripts/crontab.txt"   
+CRON_FILE = "crontab.txt"   
 DAGS_FOLDER = "main/dags"        
 Path(DAGS_FOLDER).mkdir(parents=True, exist_ok=True)
 with open(CRON_FILE, "r") as f:
