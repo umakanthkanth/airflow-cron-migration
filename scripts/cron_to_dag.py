@@ -1,8 +1,9 @@
 import os
 from pathlib import Path
-CRON_FILE = "crontab.txt"   
-DAGS_FOLDER = "main/dags"        
-Path(DAGS_FOLDER).mkdir(parents=True, exist_ok=True)
+BASE_DIR = Path(__file__).resolve().parent
+CRON_FILE = BASE_DIR/ "crontab.txt"   
+DAGS_FOLDER = BASE_DIR.parent/ "dags"        
+DAGS_FOLDER.mkdir(parents=True, exist_ok=True)
 with open(CRON_FILE, "r") as f:
     lines = f.readlines()
 for line in lines:
