@@ -1,7 +1,7 @@
 import os
 from pathlib import Path
-CRON_FILE = "https://github.com/umakanthkanth/airflow-cron-migration/blob/main/scripts/crontab.txt"   
-DAGS_FOLDER = "https://github.com/umakanthkanth/airflow-cron-migration/tree/main/dags"        
+CRON_FILE = "main/scripts/crontab.txt"   
+DAGS_FOLDER = "main/dags"        
 Path(DAGS_FOLDER).mkdir(parents=True, exist_ok=True)
 with open(CRON_FILE, "r") as f:
     lines = f.readlines()
