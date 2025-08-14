@@ -1,0 +1,16 @@
+!pip install apache-airflow==2.7.2
+import os
+
+os.environ['AIRFLOW_HOME'] = '/content/airflow_home'
+
+!mkdir -p /content/airflow_home/dags
+!mkdir -p /content/airflow_home/logs
+!cp /content/airflow-cron-migration/dags/hello_job_dag.py /content/airflow_home/dags/
+
+from airflow.models import DagBag
+dag_bag = DagBag(dag_folder='/content/airflow_home/dags', include_examples=False)
+dag = dag_bag.get_dag('hello_job_dag')
+task = dag.get_task('run_hello_job')
+ti = task.run(start_date=dag.start_date, end_date=dag.start_date)
+#logs checking
+  !ls /content/airflow_home/logs/hello_job_dag/
