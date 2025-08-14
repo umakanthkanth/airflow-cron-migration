@@ -1,16 +1,4 @@
-# Use the correct Astro Runtime version compatible with your deployment
-FROM quay.io/astronomer/astro-runtime:3.0-7
 
-# Optional: install OS packages if needed
-# COPY packages.txt .
-# RUN if [[ -s packages.txt ]]; then \
-#     apt-get update && cat packages.txt | xargs apt-get install -y --no-install-recommends && \
-#     apt-get clean && rm -rf /var/lib/apt/lists/*; \
-# fi
+FROM quay.io/astronomer/astro-runtime:9.1.0
 
-# Copy DAGs
-COPY dags/ /opt/airflow/dags/
 
-# Copy requirements
-COPY requirements.txt /requirements.txt
-RUN pip install --no-cache-dir -r /requirements.txt
