@@ -1,4 +1,4 @@
-FROM quay.io/astronomer/astro-runtime:3.0.4
+FROM quay.io/astronomer/astro-runtime:10.2.0
 
 # Copy DAGs
 COPY dags/ /opt/airflow/dags/
