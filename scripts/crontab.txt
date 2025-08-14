@@ -1,2 +1,1 @@
-*/5 * * * * python3 /path/to/scripts/hello_job.py
-
+*/5 * * * * python3 /main/scripts/hello_job.py
