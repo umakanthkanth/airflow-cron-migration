@@ -16,7 +16,7 @@ RUN chmod +x scripts/*.py
 RUN if [ -f requirements.txt ]; then pip install --no-cache-dir -r requirements.txt; fi
 
 # Add cron job
-RUN crontab crontab.txt
+RUN crontab /scripts/crontab.txt
 
 # Create log file
 RUN touch /var/log/cron.log
